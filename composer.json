@@ -1,0 +1,20 @@
+{
+    "name": "ialopezg/logger",
+    "description": "PHP Based Logger Service",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isidro A. López G.",
+            "email": "me@ialopezg.com"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ialopezg\\": "src/"
+        }
+    }
+}
