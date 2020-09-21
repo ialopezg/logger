@@ -59,9 +59,10 @@ class Logger {
         // set log path where logs will be recorded
         if (!isset($params['log_path'])) {
             $this->enabled = false;
+            $this->log_path = '';
+        } else {
+            $this->log_path = trim($params['log_path'], '/\\') . DIRECTORY_SEPARATOR;
         }
-        // set log path
-        $this->log_path = trim($params['log_path'], '/\\') . DIRECTORY_SEPARATOR;
         // if path does not exists
         if (!is_dir($this->log_path) && is_writable($this->log_path)) {
             mkdir($this->log_path, 0755, true);
