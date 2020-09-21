@@ -190,4 +190,21 @@ class Logger {
 
         return is_int($result);
     }
+
+    /**
+     * Log a message into the default log system. If the log system does not exists, will create a new one.
+     *
+     * @param int $level log message level. Accepts: `debug`, `error`, `info` and `warning` messages.
+     * @param string $message log message.
+     *
+     * @return bool <code>true</code> if line was successfully wrote, <code>false</code> otherwise.
+     */
+    public static function log($level, $message) {
+        static $logger;
+        if (!($logger instanceof Logger)) {
+            $logger = new Logger();
+        }
+
+        return $logger->write($level, $message);
+    }
 }
