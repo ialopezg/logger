@@ -195,15 +195,16 @@ class Logger {
     /**
      * Log a message into the default log system. If the log system does not exists, will create a new one.
      *
-     * @param int $level log message level. Accepts: `debug`, `error`, `info` and `warning` messages.
-     * @param string $message log message.
+     * @param int $level        log message level. Accepts: `debug`, `error`, `info` and `warning` messages.
+     * @param string $message   log message.
+     * @param array $params     configuration parameters, if any.
      *
      * @return bool <code>true</code> if line was successfully wrote, <code>false</code> otherwise.
      */
-    public static function log($level, $message) {
+    public static function log($level, $message, $params = []) {
         static $logger;
         if (!($logger instanceof Logger)) {
-            $logger = new Logger();
+            $logger = new Logger($params);
         }
 
         return $logger->write($level, $message);
