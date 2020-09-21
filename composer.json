@@ -1,6 +1,6 @@
 {
     "name": "ialopezg/logger",
-    "description": "PHP Based Logger Service",
+    "description": "Logger Service for PHP",
     "type": "library",
     "license": "MIT",
     "authors": [

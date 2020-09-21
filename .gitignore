@@ -1,5 +1,5 @@
 ###########################
-# PHP Based Logger Service
+# Logger Service for PHP
 ###########################
 
 ## Jetbrains Software
@@ -14,3 +14,6 @@
 # Composer
 /vendor/
 composer.lock
+
+# Log files
+*.log
